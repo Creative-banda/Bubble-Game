@@ -1,7 +1,4 @@
-# 5.1  In this code, we will make main_menu screen
-# We will add a new font `title_font` for the title 
-# We will create a function `display_start_screen` that shows the title with a background color
-# We will use a variable `isAlive` to check if the player is alive or not
+# 5.3 In this code, We will detect the player click on Play button and start the game.
 
 import pygame
 import random
@@ -178,15 +175,26 @@ def increase_difficulty():
         number_of_items += 1
         last_update_time = current_time
 
+def draw_button(rect, text, color):
+    pygame.draw.rect(screen, color, rect, border_radius=20)
+    txt_surface = font.render(text, True, (255, 255, 255))
+    screen.blit(txt_surface, (
+        rect.centerx - txt_surface.get_width() // 2,
+        rect.centery - txt_surface.get_height() // 2
+    ))
+
 def display_start_screen():
     global high_score
 
     screen.fill((30, 30, 30))
-
     # Title text
     title_text = title_font.render("Bubble Dash", True, (255, 255, 255))
     screen.blit(title_text, (WIDTH // 2 - title_text.get_width() // 2, HEIGHT // 4))
     
+    play_button = pygame.Rect(WIDTH // 2 - 75, HEIGHT // 2 - 50, 150, 50)
+
+    draw_button(play_button, "Play", (0, 200, 0))
+
     high_text = font.render(f"Highscore: {high_score}", True, (255, 255, 255))
     screen.blit(high_text, (WIDTH // 2 - high_text.get_width() // 2, HEIGHT // 2 + 100))
 

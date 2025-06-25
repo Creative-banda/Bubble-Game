@@ -1,7 +1,12 @@
-# 5.1  In this code, we will make main_menu screen
-# We will add a new font `title_font` for the title 
-# We will create a function `display_start_screen` that shows the title with a background color
-# We will use a variable `isAlive` to check if the player is alive or not
+# 5.2 In this code, we will make main_menu screen
+# We will create a function named `draw_button` that creates a button with text
+
+# Task For You:
+# - We have a Play button, your task is to create a new buttons for Quit.
+# - Here is the details of the button:
+#   - The button should be below the Play button.
+#   - The button should have the text "Quit".
+#   - The button should have a red color.
 
 import pygame
 import random
@@ -178,20 +183,41 @@ def increase_difficulty():
         number_of_items += 1
         last_update_time = current_time
 
+def draw_button(rect, text, color):
+    pygame.draw.rect(screen, color, rect, border_radius=20)
+    txt_surface = font.render(text, True, (255, 255, 255))
+    screen.blit(txt_surface, (
+        rect.centerx - txt_surface.get_width() // 2,
+        rect.centery - txt_surface.get_height() // 2
+    ))
+
 def display_start_screen():
-    global high_score
+    global isAlive, score, game_speed, obstacles, coins, player_x, player_y, last_update_time, high_score
 
     screen.fill((30, 30, 30))
-
     # Title text
     title_text = title_font.render("Bubble Dash", True, (255, 255, 255))
     screen.blit(title_text, (WIDTH // 2 - title_text.get_width() // 2, HEIGHT // 4))
     
+    play_button = pygame.Rect(WIDTH // 2 - 75, HEIGHT // 2 - 50, 150, 50)
+    quit_button = pygame.Rect(WIDTH // 2 - 75, HEIGHT // 2 + 20, 150, 50)
+
+    draw_button(play_button, "Play", (0, 200, 0))
+    draw_button(quit_button, "Quit", (200, 0, 0))
+
     high_text = font.render(f"Highscore: {high_score}", True, (255, 255, 255))
     screen.blit(high_text, (WIDTH // 2 - high_text.get_width() // 2, HEIGHT // 2 + 100))
 
+    mouse_pos, click = pygame.mouse.get_pos(), pygame.mouse.get_pressed()
+    if click[0]:  # Left click
+        if play_button.collidepoint(mouse_pos):
+            isAlive, score, game_speed = True, 0, 3
+            obstacles.clear(), coins.clear()
+            player_x = (WIDTH - player_width) // 2
+            player_y = (HEIGHT - player_width) // 1.5
+            last_update_time = pygame.time.get_ticks()
+            background_music.play(-1)
 
-background_music.play(-1)  # Play background music in a loop
 
 # ============================== HIGH SCORE HANDLING ============================== #
 
