@@ -219,7 +219,7 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-        handle_player_movement(event)
+    handle_player_movement(event)
 
     # Display Play button if player is not alive
     if not isAlive:
