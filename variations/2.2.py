@@ -69,7 +69,7 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-        handle_player_movement(event)
+    handle_player_movement(event)
 
     # Move the obstacle down the screen
     obstacle["y"] += game_speed

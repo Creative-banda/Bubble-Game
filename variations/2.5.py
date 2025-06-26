@@ -80,7 +80,7 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-        handle_player_movement(event)
+    handle_player_movement(event)
 
     # Create a new obstacle at random intervals
     if len(obstacles) < number_of_items and random.randint(1, 50) == 1:  # Random chance to create an obstacle

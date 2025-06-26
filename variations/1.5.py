@@ -52,7 +52,7 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-        handle_player_movement(event)
+    handle_player_movement(event)
 
     # Drawing a Rectangle (player)
     pygame.draw.rect(screen, PLAYER_COLOR, (player_x, player_y, player_width, player_height))
