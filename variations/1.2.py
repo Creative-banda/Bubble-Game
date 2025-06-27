@@ -1,5 +1,4 @@
 # 1.2 In this Code Snippet, We will Create a Rectangle in the window.
-# We will understand how to create a rectangle and it arguments.
 
 import pygame
 

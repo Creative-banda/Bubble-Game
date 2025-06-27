@@ -1,6 +1,5 @@
 # 1.1 Create a Pygame window
 # This code will open a Pygame window with the dimensions 400x800 pixels and with the title "Bubble Dash".
-# We will understand clock, Its use and what is events in pygame and how to handle them.
 
 import pygame
 

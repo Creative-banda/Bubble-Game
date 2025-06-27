@@ -2,7 +2,7 @@
 # We will understand how to use font in Pygame to render text on the screen.
 
 # Task for you:
-# - Score is not increasing, fix it.
+# - Score is not increasing, Try to fix it.
 
 import pygame
 import random
