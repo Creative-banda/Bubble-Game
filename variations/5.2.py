@@ -206,15 +206,6 @@ def display_start_screen():
     high_text = font.render(f"Highscore: {high_score}", True, (255, 255, 255))
     screen.blit(high_text, (WIDTH // 2 - high_text.get_width() // 2, HEIGHT // 2 + 100))
 
-    mouse_pos, click = pygame.mouse.get_pos(), pygame.mouse.get_pressed()
-    if click[0]:  # Left click
-        if play_button.collidepoint(mouse_pos):
-            isAlive, score, game_speed = True, 0, 5
-            obstacles.clear(), coins.clear()
-            player_x = (WIDTH - player_width) // 2
-            player_y = (HEIGHT - player_width) // 1.5
-            last_update_time = pygame.time.get_ticks()
-            background_music.play(-1)
 
 
 # ============================== HIGH SCORE HANDLING ============================== #
