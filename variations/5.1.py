@@ -16,7 +16,7 @@ number_of_items = 5 # Number of obstacles
 obstacles = []  # List to store obstacle data
 coins = []  # List to store coin data
 last_update_time = pygame.time.get_ticks()  # Track time for speed increase
-isAlive = False # Variable to check if the player is alive
+isAlive = True # Variable to check if the player is alive
 
 # Screen dimensions
 WIDTH, HEIGHT = 400, 800
@@ -191,7 +191,7 @@ def display_start_screen():
     screen.blit(high_text, (WIDTH // 2 - high_text.get_width() // 2, HEIGHT // 2 + 100))
 
 
-background_music.play(-1)  # Play background music in a loop
+# background_music.play(-1)  # Play background music in a loop
 
 # ============================== HIGH SCORE HANDLING ============================== #
 

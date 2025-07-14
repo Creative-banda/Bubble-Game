@@ -113,7 +113,7 @@ def draw_coins():
 # ============================== COLLISION DETECTION ============================== #
 
 def check_collisions():
-    global running, coins
+    global running, coins, score
     """Checks for collisions between the player and obstacles."""
     player_rect = pygame.Rect(player_x, player_y, player_width, player_height)
 
@@ -129,7 +129,7 @@ def check_collisions():
         coin_rect = pygame.Rect(coin['x'], coin['y'], coin['width'], coin["height"])
         if player_rect.colliderect(coin_rect):
             coins.remove(coin)
-
+            score += 10
 # ============================== DRAW PANEL ============================== #
 
 def draw_panel():

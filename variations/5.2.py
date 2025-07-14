@@ -200,10 +200,8 @@ def display_start_screen():
     screen.blit(title_text, (WIDTH // 2 - title_text.get_width() // 2, HEIGHT // 4))
     
     play_button = pygame.Rect(WIDTH // 2 - 75, HEIGHT // 2 - 50, 150, 50)
-    quit_button = pygame.Rect(WIDTH // 2 - 75, HEIGHT // 2 + 20, 150, 50)
 
     draw_button(play_button, "Play", (0, 200, 0))
-    draw_button(quit_button, "Quit", (200, 0, 0))
 
     high_text = font.render(f"Highscore: {high_score}", True, (255, 255, 255))
     screen.blit(high_text, (WIDTH // 2 - high_text.get_width() // 2, HEIGHT // 2 + 100))
@@ -211,7 +209,7 @@ def display_start_screen():
     mouse_pos, click = pygame.mouse.get_pos(), pygame.mouse.get_pressed()
     if click[0]:  # Left click
         if play_button.collidepoint(mouse_pos):
-            isAlive, score, game_speed = True, 0, 3
+            isAlive, score, game_speed = True, 0, 5
             obstacles.clear(), coins.clear()
             player_x = (WIDTH - player_width) // 2
             player_y = (HEIGHT - player_width) // 1.5

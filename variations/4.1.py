@@ -195,7 +195,7 @@ while running:
     # Check for collisions
     check_collisions()
 
-    # Drawing a Rectangle (player)
+    # Drawing the player image
     screen.blit(player_img, (player_x, player_y))
 
     # Draw the PANEL

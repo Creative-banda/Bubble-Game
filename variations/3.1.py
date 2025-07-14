@@ -5,6 +5,7 @@
 # - Create a new function to draw coins on the screen.
 # - Create a new function to update coins and make them fall down the screen.
 
+
 import pygame
 import random
 

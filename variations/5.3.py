@@ -143,6 +143,8 @@ def check_collisions():
             print("Collision detected! Game Over.")
             isAlive = False  # Make the player not alive
             background_music.stop()  # Stop background music when game is over
+            if score > highscore:
+                save_highscore()
 
     # Check collision with coins
     for coin in coins:

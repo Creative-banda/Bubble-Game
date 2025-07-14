@@ -83,7 +83,7 @@ while running:
     handle_player_movement(event)
 
     # Create a new obstacle at random intervals
-    if len(obstacles) < number_of_items and random.randint(1, 50) == 1:  # Random chance to create an obstacle
+    if len(obstacles) < number_of_items and random.randint(1, 100) == 1:  # Random chance to create an obstacle
         create_obstacle()
 
     # Move the obstacles down the screen

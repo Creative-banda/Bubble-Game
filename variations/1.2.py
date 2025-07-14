@@ -24,7 +24,7 @@ while running:
             running = False
 
     # Drawing a Rectangle (player)
-    pygame.draw.rect(screen, (0, 255, 0), (WIDTH // 2, HEIGHT - 100, 50, 70))
+    pygame.draw.rect(screen, (0, 255, 0), (WIDTH // 2, HEIGHT - 200, 50, 70))
 
     pygame.display.flip()  # Update display
     clock.tick(60)  # Limit FPS to 60

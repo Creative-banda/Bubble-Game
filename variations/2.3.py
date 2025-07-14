@@ -52,7 +52,7 @@ def create_obstacle():
     obstacle_width = random.randint(20, 80)
     obstacle_height = 30
     x = random.randint(0, WIDTH - obstacle_width)
-    y = obstacle_height
+    y = -obstacle_height
 
     obstacles.append({"x": x, "y": y, "width": obstacle_width, "height": obstacle_height})
 
